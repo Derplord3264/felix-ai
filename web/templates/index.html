@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLaLM AI</title>
+</head>
+<body>
+    <h1>SLaLM AI</h1>
+    <form method="post">
+        <label for="user_input">You:</label>
+        <input type="text" id="user_input" name="user_input" required>
+        <button type="submit">Send</button>
+    </form>
+    {% if response %}
+    <h2>AI:</h2>
+    <p>{{ response }}</p>
+    {% endif %}
+</body>
+</html>
