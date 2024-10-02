@@ -5,7 +5,7 @@ def train_model():
     tokenizer = T5Tokenizer.from_pretrained('t5-small')
     model = T5ForConditionalGeneration.from_pretrained('t5-small')
 
-    dataset = load_from_disk('../data/daily_dialog')
+    dataset = load_from_disk('data/daily_dialog')
     tokenized_dataset = dataset.map(lambda x: tokenizer(x['dialog'], padding='max_length', truncation=True, max_length=512), batched=True)
 
     training_args = TrainingArguments(
@@ -24,7 +24,7 @@ def train_model():
     )
 
     trainer.train()
-    model.save_pretrained('t5-small')
+    model.save_pretrained('model/t5-small')
 
 if __name__ == "__main__":
     train_model()
