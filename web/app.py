@@ -3,8 +3,8 @@ from transformers import T5Tokenizer, T5ForConditionalGeneration
 
 app = Flask(__name__)
 
-tokenizer = T5Tokenizer.from_pretrained('../model/t5-small')
-model = T5ForConditionalGeneration.from_pretrained('../model/t5-small')
+tokenizer = T5Tokenizer.from_pretrained('model/t5-small')
+model = T5ForConditionalGeneration.from_pretrained('model/t5-small')
 
 @app.route("/", methods=["GET", "POST"])
 def index():
